@@ -1,7 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Taschenrechner</title>
+{{ define "main" }}
+{{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title) }}
     <script>
         function berechne() {
             var num1 = parseFloat(document.getElementById("num1").value);
@@ -22,8 +20,7 @@
             document.getElementById("ergebnis").innerHTML = "Ergebnis: " + ergebnis;
         }
     </script>
-</head>
-<body>
+
     <h1>Taschenrechner</h1>
     <input type="number" id="num1" placeholder="Zahl 1">
     <select id="operator">
@@ -35,5 +32,5 @@
     <input type="number" id="num2" placeholder="Zahl 2">
     <button onclick="berechne()">Berechnen</button>
     <p id="ergebnis">Ergebnis: </p>
-</body>
-</html>
+
+{{ end }}
