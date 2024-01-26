@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Taschenrechner</title>
+    <script>
+        function berechne() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            var operator = document.getElementById("operator").value;
+            var ergebnis;
+
+            if (operator === "+") {
+                ergebnis = num1 + num2;
+            } else if (operator === "-") {
+                ergebnis = num1 - num2;
+            } else if (operator === "*") {
+                ergebnis = num1 * num2;
+            } else if (operator === "/") {
+                ergebnis = num1 / num2;
+            }
+
+            document.getElementById("ergebnis").innerHTML = "Ergebnis: " + ergebnis;
+        }
+    </script>
+</head>
+<body>
+    <h1>Taschenrechner</h1>
+    <input type="number" id="num1" placeholder="Zahl 1">
+    <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="number" id="num2" placeholder="Zahl 2">
+    <button onclick="berechne()">Berechnen</button>
+    <p id="ergebnis">Ergebnis: </p>
+</body>
+</html>
